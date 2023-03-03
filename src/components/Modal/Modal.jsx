@@ -1,9 +1,7 @@
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
+import { Modal, Box, Typography } from "@mui/material";
 import { selectPokemon } from "../../store/selects";
 import { useSelector } from "react-redux";
-import { ColoredRound, Spacer } from "../index";
+import { ColoredRound } from "../index";
 
 const style = {
   position: "absolute",

@@ -5,7 +5,7 @@ import {
   Typography,
   CardActions,
   CardContent,
-} from "../../../node_modules/@mui/material/index";
+} from "@mui/material";
 import { ColoredRound, Loader, MyModal } from "../index";
 import { useDispatch } from "react-redux";
 import { putPokemon } from "../../store/reducers/pokemonReducer";

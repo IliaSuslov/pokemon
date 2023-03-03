@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import { loadPokemon } from "../../store/thunks";
 import { useDispatch, useSelector } from "react-redux";
 import { PokemonItem } from "../index";
-import { Grid } from "../../../node_modules/@mui/material/index";
+import { Grid } from "@mui/material";
 import { selectColorFilters } from "../../store/selects";
 
 export function Pokemon({ name }) {
