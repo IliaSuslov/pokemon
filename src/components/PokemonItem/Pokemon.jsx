@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { loadPokemon } from "../../store/thunks";
 import { useDispatch, useSelector } from "react-redux";
-import { Loader, PokemonItem } from "../index";
+import { PokemonItem } from "../index";
 import { Grid } from "../../../node_modules/@mui/material/index";
 import { selectColorFilters } from "../../store/selects";
 
@@ -24,7 +24,6 @@ export function Pokemon({ name }) {
 
   const show = pokemon?.types.map((v) => colorFilters?.includes(v.type.name));
 
-  console.log(show);
   return (
     <>
       {colorFilters?.length && show?.includes(true) && pokemon ? (
