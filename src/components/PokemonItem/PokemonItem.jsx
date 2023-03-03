@@ -50,7 +50,7 @@ export function PokemonItem({ pokemon }) {
           </CardContent>
           <CardActions>
             <Button variant="contained" onClick={handleClick}>
-              Посмотреть покемона
+              Open pokemon
             </Button>
           </CardActions>
         </Card>
