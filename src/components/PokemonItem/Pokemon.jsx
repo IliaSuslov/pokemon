@@ -22,11 +22,12 @@ export function Pokemon({ name }) {
 
   const colorFilters = useSelector(selectColorFilters);
 
-  const show = pokemon?.types.map((v) => colorFilters.includes(v.type.name));
+  const show = pokemon?.types.map((v) => colorFilters?.includes(v.type.name));
 
+  console.log(show);
   return (
     <>
-      {colorFilters.length && show.includes(true) && pokemon ? (
+      {colorFilters?.length && show?.includes(true) && pokemon ? (
         <Grid item md={3} sm={4} xs={12}>
           <PokemonItem pokemon={pokemon} />
         </Grid>
