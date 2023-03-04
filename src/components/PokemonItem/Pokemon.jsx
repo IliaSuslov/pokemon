@@ -22,8 +22,10 @@ export function Pokemon({ name }) {
 
   const colorFilters = useSelector(selectColorFilters);
 
-  const show = pokemon?.types.map((v) => colorFilters?.includes(v.type.name));
-
+  const show = useMemo(
+    () => pokemon?.types.map((v) => colorFilters?.includes(v.type.name)),
+    [colorFilters]
+  );
   return (
     <>
       {colorFilters?.length && show?.includes(true) && pokemon ? (

@@ -8,7 +8,7 @@ import {
   selectPage,
 } from "./store/selects";
 import { loadPokemons } from "./store/thunks";
-import { Grid, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Header, PokemonItem, Pokemon, Spacer } from "./components/index";
 import { clearPokemons } from "./store/reducers/pokemonReducer";
 
@@ -24,12 +24,8 @@ function App() {
     const offset = page > 1 ? page * limit : 0;
     dispatch(loadPokemons({ limit, offset }));
   }, [limit]);
-
   return (
     <>
-      <Typography variant="h4">
-        api не очень удобное для задания / api does not fit for the task (imo)
-      </Typography>
       <Header />
       <Spacer />
       {!filteredPokemons?.length ? (
