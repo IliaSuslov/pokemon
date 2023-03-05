@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { PokemonItem } from "../index";
 import { Grid } from "@mui/material";
 import { selectColorFilters } from "../../store/selects";
+import { Loader } from "../Loader/Loader";
 
 export function Pokemon({ name }) {
   const dispatch = useDispatch();
@@ -26,6 +27,14 @@ export function Pokemon({ name }) {
     () => pokemon?.types.map((v) => colorFilters?.includes(v.type.name)),
     [colorFilters]
   );
+
+  if (!pokemon) {
+    return (
+      <Grid item md={3} sm={4} xs={12}>
+        <Loader />
+      </Grid>
+    );
+  }
   return (
     <>
       {colorFilters?.length && show?.includes(true) && pokemon ? (
