@@ -28,35 +28,31 @@ export function PokemonItem({ pokemon }) {
   const { name, sprites, types, stats } = pokemon;
   return (
     <>
-      {pokemon ? (
-        <Card variant="outlined" sx={{ backgroundColor: "lightgrey" }}>
-          <CardContent>
-            <Typography variant="h5">{name?.toUpperCase()}</Typography>
-            <img src={sprites?.front_default} alt="pokemon image" />
-            <div className="display_flex">
-              <Typography>TYPE:</Typography>
-              {types?.map(({ type }, i) => (
-                <div className="types_con" key={i}>
-                  <ColoredRound type={type.name} key={type.name} />
-                  <Typography key={i}>{type.name},</Typography>
-                </div>
-              ))}
-            </div>
-            {stats.map(({ stat, base_stat }, i) => (
-              <Typography key={i}>
-                {stat.name.toUpperCase()}: {base_stat}
-              </Typography>
+      <Card variant="outlined" sx={{ backgroundColor: "lightgrey" }}>
+        <CardContent>
+          <Typography variant="h5">{name?.toUpperCase()}</Typography>
+          <img src={sprites?.front_default} alt="pokemon image" />
+          <div className="display_flex">
+            <Typography>TYPE:</Typography>
+            {types?.map(({ type }, i) => (
+              <div className="types_con" key={i}>
+                <ColoredRound type={type.name} key={type.name} />
+                <Typography key={i}>{type.name},</Typography>
+              </div>
             ))}
-          </CardContent>
-          <CardActions>
-            <Button variant="contained" onClick={handleClick}>
-              Open pokemon
-            </Button>
-          </CardActions>
-        </Card>
-      ) : (
-        <Loader />
-      )}
+          </div>
+          {stats.map(({ stat, base_stat }, i) => (
+            <Typography key={i}>
+              {stat.name.toUpperCase()}: {base_stat}
+            </Typography>
+          ))}
+        </CardContent>
+        <CardActions>
+          <Button variant="contained" onClick={handleClick}>
+            Open pokemon
+          </Button>
+        </CardActions>
+      </Card>
       <MyModal isClosed={isClosed} handleClose={handleClose} />
     </>
   );
